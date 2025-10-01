@@ -5,6 +5,11 @@ spring:
   application:
     name: asset-manager
 
+aws:
+  region: ap-northeast-3
+  dynamodb:
+    table-name: AssetManager
+
 springdoc:
   api-docs:
     path: /api-docs

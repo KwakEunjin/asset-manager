@@ -23,7 +23,7 @@ public class DashboardController {
             @Parameter(description = "연월 (YYYY.MM)", example = "2025.01")
             @PathVariable String yearMonth) {
         
-        // TODO: 실제 데이터 계산 로직 구현
+        // TODO: DynamoDB에서 실제 데이터 조회 및 계산
         Map<String, Object> summary = new HashMap<>();
         summary.put("yearMonth", yearMonth);
         summary.put("totalIncome", 0L);
@@ -34,12 +34,7 @@ public class DashboardController {
         summary.put("netAsset", 0L);
         summary.put("cashAccumulated", 0L);
         summary.put("investmentAccumulated", 0L);
-        
-        Map<String, Long> shortSavingsBalances = new HashMap<>();
-        shortSavingsBalances.put("운동", 0L);
-        shortSavingsBalances.put("여행", 0L);
-        shortSavingsBalances.put("경조비", 0L);
-        summary.put("shortSavingsBalances", shortSavingsBalances);
+        summary.put("shortSavingsBalances", new HashMap<>());
         
         return ResponseEntity.ok(summary);
     }

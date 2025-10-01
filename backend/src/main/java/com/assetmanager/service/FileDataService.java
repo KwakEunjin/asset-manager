@@ -23,19 +23,7 @@ public class FileDataService {
             ClassPathResource resource = new ClassPathResource(dataFilePath);
             return objectMapper.readTree(resource.getInputStream());
         } catch (IOException e) {
-            String defaultData = "{" +
-                "\"codes\":{" +
-                "\"NAME\":[\"배우자1\",\"배우자2\"]," +
-                "\"INCOME_TYPE\":[\"월급\",\"상여\",\"기타수입\"]," +
-                "\"FIXED_EXPENSE_TYPE\":[\"대출\",\"주거\",\"통신\",\"곗돈\",\"구독\"]," +
-                "\"LIVING_EXPENSE_CATEGORY\":[\"식비\",\"교통비\",\"의료비\",\"문화생활\",\"기타\"]," +
-                "\"ACCOUNT_TYPE\":[\"적금1\",\"적금2\",\"적금3\",\"청약\",\"연금저축\",\"주식\",\"코인\"]," +
-                "\"SHORT_SAVINGS_TYPE\":[\"운동\",\"여행\",\"경조비\"]" +
-                "}," +
-                "\"transactions\":[]," +
-                "\"monthlySummaries\":{}" +
-                "}";
-            return objectMapper.readTree(defaultData);
+            throw new RuntimeException("Failed to read data file", e);
         }
     }
 
@@ -60,7 +48,7 @@ public class FileDataService {
             }
             return result;
         } catch (IOException e) {
-            return new ArrayList<>();
+            throw new RuntimeException("Failed to get codes", e);
         }
     }
 
