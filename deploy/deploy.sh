@@ -40,5 +40,5 @@ echo $BACKEND_PID > ../pids/backend.pid
 echo $FRONTEND_PID > ../pids/frontend.pid
 
 echo "=== 배포 완료 ==="
-echo "백엔드: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4):8080"
+echo "백엔드: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4):3080"
 echo "프론트엔드: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4):3000"

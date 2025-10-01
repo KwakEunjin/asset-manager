@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/api/transactions")
@@ -20,7 +21,7 @@ public class TransactionController {
     @PostMapping
     @Operation(summary = "거래 저장", description = "새로운 거래 데이터를 저장합니다")
     public ResponseEntity<Void> saveTransaction(@RequestBody TransactionRequest transaction) {
-        // TODO: 거래 저장 로직 구현
+        // TODO: 실제 저장 로직으로 연결
         return ResponseEntity.ok().build();
     }
 
@@ -31,7 +32,7 @@ public class TransactionController {
             @PathVariable String yearMonth,
             @Parameter(description = "거래 유형 (INCOME, FIXED_EXPENSE, LIVING_EXPENSE, SAVINGS, SHORT_SAVINGS)", example = "INCOME")
             @PathVariable String type) {
-        // TODO: 거래 조회 로직 구현
-        return ResponseEntity.ok(List.of());
+        // TODO: 실제 조회 로직으로 연결
+        return ResponseEntity.ok(new ArrayList<>());
     }
 }

@@ -17,8 +17,8 @@ sudo yum install -y nodejs
 # Git 설치
 sudo yum install -y git
 
-# 방화벽 설정 (포트 8080, 3000 열기)
-sudo firewall-cmd --permanent --add-port=8080/tcp
+# 방화벽 설정 (포트 3080, 3000 열기)
+sudo firewall-cmd --permanent --add-port=3080/tcp
 sudo firewall-cmd --permanent --add-port=3000/tcp
 sudo firewall-cmd --reload
 

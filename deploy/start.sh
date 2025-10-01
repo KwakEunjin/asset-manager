@@ -28,4 +28,5 @@ echo $! > ../pids/frontend.pid
 echo "프론트엔드 PID: $(cat ../pids/frontend.pid)"
 
 echo "=== 시작 완료 ==="
-echo "접속 URL: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4):3000"
+echo "프론트엔드: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4):3000"
+echo "백엔드 API: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4):3080"
